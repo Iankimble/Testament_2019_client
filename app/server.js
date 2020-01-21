@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const expressValidator = require("express-validator");
+const path = require("path");
 const cors = require("cors");
 const schedule = require("node-schedule");
 const Scripture = require("./models/DailyBread-model");
@@ -151,4 +152,14 @@ mongoose
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
+});
+
+// React front end
+app.use(express.static(path.join(__dirname, "client", "build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
