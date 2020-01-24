@@ -1,5 +1,5 @@
 export const read = (userId, token) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+  return fetch(`https://testament1.herokuapp.com/user/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -14,7 +14,7 @@ export const read = (userId, token) => {
 };
 
 export const listByUser = (userId, token) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/posts/by/${userId}`, {
+  return fetch(`https://testament1.herokuapp.com/posts/by/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -29,7 +29,7 @@ export const listByUser = (userId, token) => {
 };
 
 export const dailyBread = () => {
-  return fetch(`${process.env.REACT_APP_API_URL}/dailybread`, {
+  return fetch(`https://testament1.herokuapp.com/dailybread`, {
     method: "GET"
   })
     .then(response => {
