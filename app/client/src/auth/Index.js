@@ -1,5 +1,5 @@
 export const signup = user => {
-  return fetch(`${process.env.REACT_APP_API_URL}/signup`, {
+  return fetch(`https://testament1.herokuapp.com/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -13,7 +13,7 @@ export const signup = user => {
     .catch(err => console.log(err));
 };
 export const signin = user => {
-  return fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+  return fetch(`https://testament1.herokuapp.com/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -37,7 +37,7 @@ export const authenticate = (jwt, next) => {
 export const signout = next => {
   if (typeof window !== "undefined") localStorage.removeItem("jwt");
   next();
-  return fetch(`${process.env.REACT_APP_API_URL}/signout`, {
+  return fetch(`https://testament1.herokuapp.com/signout`, {
     method: "GET"
   })
     .then(res => {
