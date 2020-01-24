@@ -1,5 +1,5 @@
 export const read = (userId, token) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+  return fetch(`https://testament1.herokuapp.com/user/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -14,7 +14,7 @@ export const read = (userId, token) => {
 };
 
 export const allPrayers = (userId, token) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/all/prayers/${userId}`, {
+  return fetch(`https://testament1.herokuapp.com/all/prayers/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -29,7 +29,7 @@ export const allPrayers = (userId, token) => {
 };
 
 export const createPrayer = (userId, token, data) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/new/prayer/${userId}`, {
+  return fetch(`https://testament1.herokuapp.com/new/prayer/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -44,7 +44,7 @@ export const createPrayer = (userId, token, data) => {
 };
 
 export const single = prayerId => {
-  return fetch(`${process.env.REACT_APP_API_URL}/prayer/${prayerId}`, {
+  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
     method: "GET"
   })
     .then(response => {
@@ -55,7 +55,7 @@ export const single = prayerId => {
 
 export const update = (prayerId, token, prayer) => {
   console.log(prayerId, token, prayer);
-  return fetch(`${process.env.REACT_APP_API_URL}/prayer/${prayerId}`, {
+  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -70,7 +70,7 @@ export const update = (prayerId, token, prayer) => {
 };
 
 export const remove = (prayerId, token) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/prayer/${prayerId}`, {
+  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -99,7 +99,7 @@ export const remove = (prayerId, token) => {
 //
 export const allPg = (userId, token, page, limit) => {
   return fetch(
-    `${process.env.REACT_APP_API_URL}/all/${userId}?page=${page}&limit=${limit}`,
+    `https://testament1.herokuapp.com/all/${userId}?page=${page}&limit=${limit}`,
     {
       method: "GET",
       headers: {
@@ -116,7 +116,7 @@ export const allPg = (userId, token, page, limit) => {
 };
 
 export const addNote = (userId, token, prayerId, note) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/prayer/addnote`, {
+  return fetch(`https://testament1.herokuapp.com/prayer/addnote`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -132,7 +132,7 @@ export const addNote = (userId, token, prayerId, note) => {
 };
 
 export const removeNote = (userId, token, prayerId, note) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/prayer/removenote`, {
+  return fetch(`https://testament1.herokuapp.com/prayer/removenote`, {
     method: "POST",
     headers: {
       Accept: "application/json",
