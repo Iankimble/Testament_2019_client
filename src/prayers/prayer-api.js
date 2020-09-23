@@ -1,87 +1,87 @@
 export const read = (userId, token) => {
-  return fetch(`https://testament1.herokuapp.com/user/${userId}`, {
+  return fetch(`https://testament-server.herokuapp.com/user/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const allPrayers = (userId, token) => {
-  return fetch(`https://testament1.herokuapp.com/all/prayers/${userId}`, {
+  return fetch(`https://testament-server.herokuapp.com/all/prayers/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const createPrayer = (userId, token, data) => {
-  return fetch(`https://testament1.herokuapp.com/new/prayer/${userId}`, {
+  return fetch(`https://testament-server.herokuapp.com/new/prayer/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
-    body: data
+    body: data,
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
-export const single = prayerId => {
-  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
-    method: "GET"
+export const single = (prayerId) => {
+  return fetch(`https://testament-server.herokuapp.com/prayer/${prayerId}`, {
+    method: "GET",
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const update = (prayerId, token, prayer) => {
   console.log(prayerId, token, prayer);
-  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
+  return fetch(`https://testament-server.herokuapp.com/prayer/${prayerId}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
-    body: prayer
+    body: prayer,
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const remove = (prayerId, token) => {
-  return fetch(`https://testament1.herokuapp.com/prayer/${prayerId}`, {
+  return fetch(`https://testament-server.herokuapp.com/prayer/${prayerId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 //
 //
@@ -105,14 +105,14 @@ export const allPg = (userId, token, page, limit) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     }
   )
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const addNote = (userId, token, prayerId, note) => {
@@ -121,14 +121,14 @@ export const addNote = (userId, token, prayerId, note) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ userId, prayerId, note })
+    body: JSON.stringify({ userId, prayerId, note }),
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const removeNote = (userId, token, prayerId, note) => {
@@ -137,12 +137,12 @@ export const removeNote = (userId, token, prayerId, note) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ userId, prayerId, note })
+    body: JSON.stringify({ userId, prayerId, note }),
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };

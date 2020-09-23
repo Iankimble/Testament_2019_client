@@ -1,30 +1,30 @@
-export const signup = user => {
-  return fetch(`https://testament1.herokuapp.com/signup`, {
+export const signup = (user) => {
+  return fetch(`https://testament-server.herokuapp.com/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-    .then(res => {
+    .then((res) => {
       return res.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
-export const signin = user => {
-  return fetch(`https://testament1.herokuapp.com/signin`, {
+export const signin = (user) => {
+  return fetch(`https://testament-server.herokuapp.com/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-    .then(res => {
+    .then((res) => {
       return res.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const authenticate = (jwt, next) => {
@@ -34,17 +34,17 @@ export const authenticate = (jwt, next) => {
   }
 };
 
-export const signout = next => {
+export const signout = (next) => {
   if (typeof window !== "undefined") localStorage.removeItem("jwt");
   next();
-  return fetch(`https://testament1.herokuapp.com/signout`, {
-    method: "GET"
+  return fetch(`https://testament-server.herokuapp.com/signout`, {
+    method: "GET",
   })
-    .then(res => {
+    .then((res) => {
       console.log("signout", res);
       return res.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const isAuthenticated = () => {

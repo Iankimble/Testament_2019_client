@@ -1,39 +1,39 @@
 export const read = (userId, token) => {
-  return fetch(`https://testament1.herokuapp.com/user/${userId}`, {
+  return fetch(`https://testament-server.herokuapp.com/user/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const listByUser = (userId, token) => {
-  return fetch(`https://testament1.herokuapp.com/posts/by/${userId}`, {
+  return fetch(`https://testament-server.herokuapp.com/posts/by/${userId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 export const dailyBread = () => {
-  return fetch(`https://testament1.herokuapp.com/dailybread`, {
-    method: "GET"
+  return fetch(`https://testament-server.herokuapp.com/dailybread`, {
+    method: "GET",
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
